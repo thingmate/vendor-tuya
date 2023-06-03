@@ -1,0 +1,154 @@
+import { Abortable } from '@lirx/async-task';
+import { IForgeWebSocketUrlFunction } from '@thingmate/vendor-meross/src/device/init-meross-mqtt-client';
+import { getWebSocketProxyUrl } from '../../misc/get-web-socket-proxy-url';
+import { TUYA_CONFIG } from '../configs/tuya/tuya-config.private';
+import { IGenericThingProperty, ThingProperty } from '../wot-scription-api/thing/property/thing-property.class';
+import { signForTuyaApi } from './api/helpers/sign-for-tuya-api';
+
+/*--------------------*/
+
+/*--------------------*/
+
+const forgeWebSocketUrlFunction: IForgeWebSocketUrlFunction = (url: URL): URL => {
+  return getWebSocketProxyUrl({
+    hostname: url.hostname,
+    port: Number(url.port),
+    protocol: 'mqtt',
+  });
+};
+
+/*--------------------*/
+
+// https://github.com/milo526/homebridge-tuya-web/tree/master/src/api
+
+/*--------------------*/
+
+export type TupleTypes<T> = { [P in keyof T]: T[P] } extends { [key: number]: infer V } ? V : never;
+
+export type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends ((k: infer I) => void) ? I : never;
+
+/*--------------------*/
+
+export type IThingConfigProperty = readonly [
+  name: string,
+  property: IGenericThingProperty,
+];
+
+export type IThingConfigPropertiesList = readonly IThingConfigProperty[];
+
+export interface IThingConfigProperties {
+  properties?: IThingConfigPropertiesList;
+}
+
+export interface IThingConfig extends IThingConfigProperties {
+}
+
+export type InferThingInitOptionsPropertiesAsRecord<GPropertiesList extends IThingConfigPropertiesList> = UnionToIntersection<TupleTypes<{
+  [GKey in keyof GPropertiesList]: Record<GPropertiesList[GKey][0], GPropertiesList[GKey][1]>;
+}>>;
+
+export type InferThingInitOptionsPropertiesAsIterable<GPropertiesList extends IThingConfigPropertiesList> = Iterable<TupleTypes<GPropertiesList>>;
+
+export type InferThingInitOptionsProperties<GPropertiesList extends IThingConfigPropertiesList> =
+  | InferThingInitOptionsPropertiesAsIterable<GPropertiesList>
+  | InferThingInitOptionsPropertiesAsRecord<GPropertiesList>
+  ;
+
+export type InferThingInitOptionsPropertiesTrait<GPropertiesList extends IThingConfigPropertiesList | undefined> =
+  GPropertiesList extends ([] | undefined)
+    ? {
+      properties?: [] | undefined,
+    }
+    : {
+      properties: InferThingInitOptionsProperties<Extract<GPropertiesList, IThingConfigPropertiesList>>;
+    }
+
+export type IThingInitOptions<GConfig extends IThingConfig> =
+  InferThingInitOptionsPropertiesTrait<GConfig['properties']>
+
+export class Thing<GConfig extends IThingConfig> {
+  #properties: Map<string, IGenericThingProperty>;
+
+  constructor(
+    {
+      properties = [],
+    }: IThingInitOptions<GConfig>,
+  ) {
+    this.#properties = new Map<string, IGenericThingProperty>((
+      (Symbol.iterator in properties)
+        ? properties
+        : Object.fromEntries(properties as any)
+    ) as Iterable<[string, IGenericThingProperty]>);
+  }
+}
+
+/*--------------------*/
+
+type ISmartPlugProperties = [
+  ['start', ThingProperty<boolean>],
+  ['end', ThingProperty<string>],
+];
+
+// type A = InferThingInitOptionsPropertiesTrait<ISmartPlugProperties>;
+
+// type A = InferThingInitOptionsPropertiesAsRecord<ISmartPlugProperties>;
+// type A = InferThingInitOptionsPropertiesAsIterable<ISmartPlugProperties>;
+// const a: A = null as any;
+// const b = a.end;
+
+/*--------------------*/
+
+async function debugTuya00() {
+  type IThingProperties = [
+    ['state', ThingProperty<'on' | 'off'>],
+  ];
+
+  type IThing = {
+    properties: IThingProperties
+  }
+
+  const state = new ThingProperty<'on' | 'off'>({
+    read: () => {
+      return 'off';
+    },
+  });
+
+  // // console.log(await state.write('on').toPromise());
+  // console.log(await state.read().toPromise());
+
+
+  const thing = new Thing<IThing>({
+    properties: [
+      // ['state', state],
+    ],
+
+  })
+
+}
+
+async function debugTuya01() {
+  const abortable = Abortable.never;
+
+  const CONFIG = TUYA_CONFIG;
+
+  const secretKey = 'abc';
+  const data = 'def';
+
+  console.log(await signForTuyaApi({ secretKey, data }));
+
+  // const loginResponse = await performTuyaLogin({
+  //   ...CONFIG,
+  //   region,
+  //   countryCode: '33',
+  //   bizType: 'smart_life',
+  //   abortable,
+  // }).toPromise();
+
+}
+
+/*--------------------*/
+
+export async function debugTuya() {
+  await debugTuya00();
+  // await debugTuya01();
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@thingmate/vendor-tuya",
+  "version": "1.0.0",
+  "description": "Description",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thingmate/vendor-tuya"
+  },
+  "sripts": {
+    "reinstall": "rm -rf ./node_modules && rm -f ./yarn.lock && yarn install"
+  },
+  "keywords": [],
+  "author": "Valentin Richard",
+  "license": "MIT",
+  "access": "public",
+  "dependencies": {
+    "@lifaon/color": "^1.0.0-dev.1685285308504",
+    "@lifaon/math": "^1.1.0-dev.1685101205890",
+    "@lirx/async-task": "^1.2.0",
+    "@thingmate/wot-scripting-api": "^1.0.0-dev.1685280520864"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.1"
+  }
+}
