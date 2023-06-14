@@ -1,0 +1,6 @@
+export * from './tuya-color-thing-property/index';
+// export * from './tuya-device-state-thing-property/index';
+export * from './tuya-on-off-state-thing-property/index';
+export * from './tuya-online-thing-property/index';
+export * from './tuya-power-consumption-history-thing-property/index';
+export * from './tuya-power-consumption-thing-property/index';

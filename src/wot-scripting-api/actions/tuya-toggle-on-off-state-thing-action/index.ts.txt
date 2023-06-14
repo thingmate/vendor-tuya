@@ -1,0 +1,1 @@
+export * from './tuya-toggle-on-off-state-thing-action.class';

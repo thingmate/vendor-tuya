@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/thingmate/vendor-tuya"
   },
-  "sripts": {
+  "scripts": {
     "reinstall": "rm -rf ./node_modules && rm -f ./yarn.lock && yarn install"
   },
   "keywords": [],
@@ -14,12 +14,13 @@
   "license": "MIT",
   "access": "public",
   "dependencies": {
-    "@lifaon/color": "^1.0.0-dev.1685285308504",
-    "@lifaon/math": "^1.1.0-dev.1685101205890",
-    "@lirx/async-task": "^1.2.0",
-    "@thingmate/wot-scripting-api": "^1.0.0-dev.1685280520864"
+    "@lifaon/color": "latest",
+    "@lifaon/math": "latest",
+    "@lirx/async-task": "latest",
+    "@lirx/stream": "latest",
+    "@thingmate/wot-scripting-api": "latest"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.1"
+    "@types/jest": "^29.5.2"
   }
 }

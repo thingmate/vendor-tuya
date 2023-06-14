@@ -1,0 +1,3 @@
+export * from './normalize-tuya-device-specification-function';
+export * from './tuya-device-specification-function-json.type';
+export * from './tuya-device-specification-function.type';

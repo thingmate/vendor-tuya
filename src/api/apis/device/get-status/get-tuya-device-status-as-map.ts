@@ -6,6 +6,7 @@ import { getTuyaDeviceStatus, IGetTuyaDeviceStatusOptions } from './get-tuya-dev
 import { ITuyaDeviceStatusMap } from './tuya-device-status-map.type';
 import { ITuyaDeviceStatusJSON } from './types/tuya-device-status-json.type';
 
+// TODO cached version
 export function getTuyaDeviceStatusAsMap(
   options: IGetTuyaDeviceStatusOptions,
 ): AsyncTask<ITuyaDeviceStatusMap> {

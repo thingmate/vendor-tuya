@@ -4,6 +4,6 @@ export interface ITuyaDeviceListJSON {
   has_more: boolean;
   last_row_key: string;
   total: number;
-  list: ITuyaDeviceDetailsJSON;
+  list: ITuyaDeviceDetailsJSON[];
 }
 

@@ -1,4 +1,4 @@
-import { Abortable, asyncFetchJSON, AsyncTask, IAbortableOptions, IAsyncTaskConstraint } from '@lirx/async-task';
+import { Abortable, asyncFetchJSON, AsyncTask, IAbortableOptions, IAsyncTaskConstraint, IAsyncFetchJSONFunction } from '@lirx/async-task';
 import { IHavingAccessToken } from '../types/having-access-token.type';
 import { IHavingClientId } from '../types/having-client-id.type';
 import { IHavingClientSecret } from '../types/having-client-secret.type';
@@ -18,6 +18,7 @@ export interface IFetchTuyaApiRequestOptions extends //
   method: ITuyaApiMethod;
   headers?: HeadersInit;
   body?: object;
+  fetch?: IAsyncFetchJSONFunction;
 }
 
 export interface IFetchTuyaApiResponseSharedJSON {
@@ -53,6 +54,7 @@ export function fetchTuyaApi<GResult extends IAsyncTaskConstraint<GResult>>(
     clientId,
     clientSecret,
     accessToken = '',
+    fetch = asyncFetchJSON,
     abortable,
   }: IFetchTuyaApiRequestOptions,
 ): AsyncTask<GResult> {
@@ -123,7 +125,7 @@ export function fetchTuyaApi<GResult extends IAsyncTaskConstraint<GResult>>(
         body,
       });
 
-      return asyncFetchJSON<IFetchTuyaApiResponseJSON<GResult>>(
+      return fetch<IFetchTuyaApiResponseJSON<GResult>>(
         request,
         void 0,
         abortable,

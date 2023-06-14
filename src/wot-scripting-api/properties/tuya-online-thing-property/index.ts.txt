@@ -1,0 +1,1 @@
+export * from './tuya-online-thing-property.class';

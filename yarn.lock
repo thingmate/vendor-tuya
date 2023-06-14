@@ -3,23 +3,23 @@
 
 
 "@babel/code-frame@^7.12.13":
-  version "7.21.4"
-  resolved "http://localhost:4873/@babel/code-frame/-/code-frame-7.21.4.tgz#d0fa9e4413aca81f2b23b9442797bda1826edb39"
-  integrity sha512-LYvhNKfwWSPpocw8GI7gpK2nq3HSDuEPC/uSYaALSJu9xjsalaaYFOq0Pwt5KmVqwEbZlDu81aLXwBOmD/Fv9g==
+  version "7.22.5"
+  resolved "http://localhost:4873/@babel/code-frame/-/code-frame-7.22.5.tgz#234d98e1551960604f1246e6475891a570ad5658"
+  integrity sha512-Xmwn266vad+6DAqEB2A6V/CcZVp62BbwVmcOJc2RPuwih1kw02TjQvWVWlcKGbBPd+8/0V5DEkOcizRGYsspYQ==
   dependencies:
-    "@babel/highlight" "^7.18.6"
+    "@babel/highlight" "^7.22.5"
 
-"@babel/helper-validator-identifier@^7.18.6":
-  version "7.19.1"
-  resolved "http://localhost:4873/@babel/helper-validator-identifier/-/helper-validator-identifier-7.19.1.tgz#7eea834cf32901ffdc1a7ee555e2f9c27e249ca2"
-  integrity sha512-awrNfaMtnHUr653GgGEs++LlAvW6w+DcPrOliSMXWCKo597CwL5Acf/wWdNkf/tfEQE3mjkeD1YOVZOUV/od1w==
+"@babel/helper-validator-identifier@^7.22.5":
+  version "7.22.5"
+  resolved "http://localhost:4873/@babel/helper-validator-identifier/-/helper-validator-identifier-7.22.5.tgz#9544ef6a33999343c8740fa51350f30eeaaaf193"
+  integrity sha512-aJXu+6lErq8ltp+JhkJUfk1MTGyuA4v7f3pA+BJ5HLfNC6nAQ0Cpi9uOquUj8Hehg0aUiHzWQbOVJGao6ztBAQ==
 
-"@babel/highlight@^7.18.6":
-  version "7.18.6"
-  resolved "http://localhost:4873/@babel/highlight/-/highlight-7.18.6.tgz#81158601e93e2563795adcbfbdf5d64be3f2ecdf"
-  integrity sha512-u7stbOuYjaPezCuLj29hNW1v64M2Md2qupEKP1fHc7WdOA3DgLh37suiSrZYY7haUB7iBeQZ9P1uiRF359do3g==
+"@babel/highlight@^7.22.5":
+  version "7.22.5"
+  resolved "http://localhost:4873/@babel/highlight/-/highlight-7.22.5.tgz#aa6c05c5407a67ebce408162b7ede789b4d22031"
+  integrity sha512-BSKlD1hgnedS5XRnGOljZawtag7H1yPfQp0tdNJCHoH6AZ+Pcm9VvkrK59/Yy593Ypg0zMxH2BxD1VPYUQ7UIw==
   dependencies:
-    "@babel/helper-validator-identifier" "^7.18.6"
+    "@babel/helper-validator-identifier" "^7.22.5"
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
@@ -49,49 +49,51 @@
     "@types/yargs" "^17.0.8"
     chalk "^4.0.0"
 
-"@lifaon/color@^1.0.0-dev.1685285308504", "@lifaon/color@latest":
+"@lifaon/color@latest":
   version "1.0.0-dev.1685285308504"
   resolved "http://localhost:4873/@lifaon/color/-/color-1.0.0-dev.1685285308504.tgz#8b40293721d07528f1b9c8bac7304ee739b1f2e6"
   integrity sha512-fnQhR+AVDGmSgrYweFvTfvD4AVC0meTlc/CJ8j48Oabq2/aypRaQCo7N2CUbLut/n1Y5E6fcQe/FzLATjjFmXg==
   dependencies:
     "@lifaon/math" latest
 
-"@lifaon/math@^1.1.0-dev.1685101205890", "@lifaon/math@latest":
+"@lifaon/math@latest":
   version "1.1.0-dev.1685101205890"
   resolved "http://localhost:4873/@lifaon/math/-/math-1.1.0-dev.1685101205890.tgz#02c3764345ee435729974ffcd40d04125fdaa398"
   integrity sha512-R5SRQbe8QaZrOsaE6ky9dyp+IVzaQBRH0qJxYb/xXmWF/t34zru2vBtuyFyEVW1BusFpbal6EM7F6yhgPjx/UA==
 
-"@lirx/async-task@^1.2.0", "@lirx/async-task@latest":
-  version "1.2.0"
-  resolved "http://localhost:4873/@lirx/async-task/-/async-task-1.2.0.tgz#3358038f78d63f3eecad0f10e4c6e019dab710b8"
-  integrity sha512-OTT0FYeYrRPmmOe/sgTt6nTOiL+r3Hq6Fbqnkh4L8ca7rGr1HAD5xZZ/7ym7lhIfnMSRyZbuXRatPqM2qMZurA==
+"@lirx/async-task@latest":
+  version "1.2.0-dev.1686055436778"
+  resolved "http://localhost:4873/@lirx/async-task/-/async-task-1.2.0-dev.1686055436778.tgz#22521a161592a59c7395dae80328b961769e3aad"
+  integrity sha512-9wynqYaqaDAIz5yiU15BIqLqrWDlLW/Anioxt6sn9rwVcAFsMD/FvWBHS901Ak5Bqxk70dBVwC/J7W/AoXZEPA==
 
 "@lirx/stream@latest":
-  version "0.8.0-dev.1684250524127"
-  resolved "http://localhost:4873/@lirx/stream/-/stream-0.8.0-dev.1684250524127.tgz#d34a782c987878b99dfbe52163e6b69cc17d498f"
-  integrity sha512-6TFArjHbBVFmDiibu0C268H6+x4p0H+4Ap6Qo82d946tmuFG46s11suld+xx6gk/fHteFz52JcrRbOaXhrnX5g==
+  version "0.8.0-dev.1686311699707"
+  resolved "http://localhost:4873/@lirx/stream/-/stream-0.8.0-dev.1686311699707.tgz#711a839eeecb6239bb63a539b59f837092877016"
+  integrity sha512-GWoRFVGAQpqr0g2ssLIN+4DY5CdHtdkmlb790MmOirEyRupKVH7pkmpCvJrTkkEJ9kA9udz8aZBEKNFNKUhDeg==
   dependencies:
     "@lirx/async-task" latest
     "@lirx/utils" latest
 
 "@lirx/utils@latest":
-  version "1.1.2"
-  resolved "http://localhost:4873/@lirx/utils/-/utils-1.1.2.tgz#fcd44275563e6bf0ea0672bbf953f56c1fcdf609"
-  integrity sha512-tjVwiDXeEFm/t4sLSCmRbS23mS94g8w6DEF3HGN4JFgwUOLC5eZKBqy2+0F+jNLNVUZSkSCyPj6i+OI7RB9RRQ==
+  version "1.1.2-dev.1686306879987"
+  resolved "http://localhost:4873/@lirx/utils/-/utils-1.1.2-dev.1686306879987.tgz#4264237338b54d3c4c2d8ac2b4b7e1688ef4ac14"
+  integrity sha512-IAFRzfFTy6DhwFzTEYrjw5SD0cDmmX5eLweFi9TEZwbybbA8ZZZQp2zfnHIM0+zda32uEl7l8bojPnIejls9Gg==
 
 "@sinclair/typebox@^0.25.16":
   version "0.25.24"
   resolved "http://localhost:4873/@sinclair/typebox/-/typebox-0.25.24.tgz#8c7688559979f7079aacaf31aa881c3aa410b718"
   integrity sha512-XJfwUVUKDHF5ugKwIcxEgc9k8b7HbznCp6eUfWgu710hMPNIO4aw4/zB5RogDQz8nd6gyCDpU9O/m6qYEWY6yQ==
 
-"@thingmate/wot-scripting-api@^1.0.0-dev.1685280520864":
-  version "1.0.0-dev.1685280520864"
-  resolved "http://localhost:4873/@thingmate/wot-scripting-api/-/wot-scripting-api-1.0.0-dev.1685280520864.tgz#b061d7d471fa78b9576e66c4d1d9200e2c66ebc2"
-  integrity sha512-uarj353jVomfWLQ2tV4hNCswi1i8Jhwx0pSEHWdFb86aJ+kqqMWmmfcyLnKZ+gC77wNjq8TSmRUvH6vKUcg6HA==
+"@thingmate/wot-scripting-api@latest":
+  version "1.0.0-dev.1686645763144"
+  resolved "http://localhost:4873/@thingmate/wot-scripting-api/-/wot-scripting-api-1.0.0-dev.1686645763144.tgz#6876ff6ac95fe22125536e700c76fc3e449ad15d"
+  integrity sha512-QJXuFpNz7w4OiQd14h/NL7FUMyauO+cbt9aDEDsJmQSDKgcnG2+AT2W09EVo+yrT0IqclMKGYCpikFwnWz0EHg==
   dependencies:
     "@lifaon/color" latest
     "@lirx/async-task" latest
     "@lirx/stream" latest
+    "@lirx/utils" latest
+    wot-thing-description-types "^1.1.0-24-May-2023"
 
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0":
   version "2.0.4"
@@ -112,7 +114,7 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@^29.5.1":
+"@types/jest@^29.5.2":
   version "29.5.2"
   resolved "http://localhost:4873/@types/jest/-/jest-29.5.2.tgz#86b4afc86e3a8f3005b297ed8a72494f89e6395b"
   integrity sha512-mSoZVJF5YzGVCk+FsDxzDuH7s+SCkzrgKZzf0Z0T2WudhBUPoF6ktoTPC4R0ZoCPCV5xUvuU6ias5NvxcBcMMg==
@@ -121,9 +123,9 @@
     pretty-format "^29.0.0"
 
 "@types/node@*":
-  version "20.2.5"
-  resolved "http://localhost:4873/@types/node/-/node-20.2.5.tgz#26d295f3570323b2837d322180dfbf1ba156fefb"
-  integrity sha512-JJulVEQXmiY9Px5axXHeYGLSjhkZEnD+MDPDGbCbIAbMslkKwmygtZFy1X6s/075Yo94sf8GuSlFfPzysQrWZQ==
+  version "20.3.1"
+  resolved "http://localhost:4873/@types/node/-/node-20.3.1.tgz#e8a83f1aa8b649377bb1fb5d7bac5cb90e784dfe"
+  integrity sha512-EhcH/wvidPy1WeML3TtYFGR83UzjxeWRen9V402T8aUGYsCHOmfoisV3ZSg03gAFIbLq8TnWOJ0f4cALtnSEUg==
 
 "@types/stack-utils@^2.0.0":
   version "2.0.1"
@@ -383,3 +385,8 @@ to-regex-range@^5.0.1:
   integrity sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==
   dependencies:
     is-number "^7.0.0"
+
+wot-thing-description-types@^1.1.0-24-May-2023:
+  version "1.1.0-24-May-2023"
+  resolved "http://localhost:4873/wot-thing-description-types/-/wot-thing-description-types-1.1.0-24-May-2023.tgz#69aa263ba40d7a86651aa55f55dd646fa5f44dae"
+  integrity sha512-iUwWIPskTQc/19Ax0JxpdufpKKBsvY2h3DTgHA05+mdHPknvDAMhLbbFM5pd+u6hQonQqA2T6MF/zJ8r1Zy1qQ==
