@@ -1,1 +1,0 @@
-export * from './tuya-device-state-thing-property.class';

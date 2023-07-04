@@ -1,1 +1,0 @@
-export * from './tuya-on-off-state-thing-property.class';

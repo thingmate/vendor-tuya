@@ -1,0 +1,1 @@
+export * from './create-tuya-power-consumption-thing-property';

@@ -1,4 +1,3 @@
-export * from './actions/index';
 export * from './discovery/index';
-export * from './properties/index';
-export * from './things/index';
+export * from './thing-property/index';
+export * from './thing/index';

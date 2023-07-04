@@ -1,1 +1,0 @@
-export * from './tuya-smart-light-thing.class';
