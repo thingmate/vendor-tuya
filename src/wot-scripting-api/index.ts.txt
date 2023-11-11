@@ -1,3 +1,0 @@
-export * from './discovery/index';
-export * from './thing-property/index';
-export * from './thing/index';

@@ -1,2 +1,0 @@
-export * from './tuya-generic-thing.type';
-export * from './tuya-thing-description.type';

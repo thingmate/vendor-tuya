@@ -65,8 +65,7 @@ export function createTuyaApiContext(
     factory: ITuyaApiContextFactory<GReturn>,
     abortable: Abortable,
   ): AsyncTask<GReturn> => {
-    return getValidToken()
-      .switchAbortable(abortable)
+    return AsyncTask.switchAbortable(getValidToken(), abortable)
       .successful((token: ITuyaAccessToken, abortable: Abortable): AsyncTask<GReturn> => {
         return factory({
           ...options,

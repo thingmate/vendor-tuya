@@ -1,2 +1,0 @@
-export * from './get-tuya-device-details';
-export * from './types/index';

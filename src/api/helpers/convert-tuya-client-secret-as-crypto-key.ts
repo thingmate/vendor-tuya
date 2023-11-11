@@ -36,6 +36,7 @@ export function convertTuyaClientSecretAsCryptoKeyCached(
   }: IConvertTuyaClientSecretAsCryptoKeyOptions,
 ): AsyncTask<CryptoKey> {
   let key: AsyncTask<CryptoKey> | undefined = CACHED_KEYS.get(clientSecret);
+
   if (key === void 0) {
     key = convertTuyaClientSecretAsCryptoKey({
       clientSecret,
@@ -43,5 +44,6 @@ export function convertTuyaClientSecretAsCryptoKeyCached(
     });
     CACHED_KEYS.set(clientSecret, key);
   }
-  return key!.switchAbortable(abortable);
+
+  return AsyncTask.switchAbortable(key, abortable);
 }

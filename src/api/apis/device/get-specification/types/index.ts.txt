@@ -1,3 +1,0 @@
-export * from './tuya-device-specification-function/index';
-export * from './tuya-device-specification-status/index';
-export * from './tuya-device-specification/index';

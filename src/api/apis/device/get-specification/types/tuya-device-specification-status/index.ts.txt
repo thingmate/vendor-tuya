@@ -1,3 +1,0 @@
-export * from './normalize-tuya-device-specification-status';
-export * from './tuya-device-specification-status-json.type';
-export * from './tuya-device-specification-status.type';
