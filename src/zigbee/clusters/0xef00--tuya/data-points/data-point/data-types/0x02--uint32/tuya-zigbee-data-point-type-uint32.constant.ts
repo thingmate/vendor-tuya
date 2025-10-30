@@ -1,0 +1,1 @@
+export const TUYA_ZIGBEE_DATA_POINT_TYPE_UINT32 = 2;
