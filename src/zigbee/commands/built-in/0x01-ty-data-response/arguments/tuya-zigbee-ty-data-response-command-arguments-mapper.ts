@@ -13,7 +13,7 @@ export type TuyaZigbeeTyDataResponseCommandArgumentsMapper =
 /**
  * Payload mapper between `TY_DATA_RESPONSE` command arguments and their wire format.
  */
-export const TUYA_ZIGBEE_TY_DATA_REPONSE_COMMAND_ARGUMENTS_MAPPER: TuyaZigbeeTyDataResponseCommandArgumentsMapper =
+export const TUYA_ZIGBEE_TY_DATA_RESPONSE_COMMAND_ARGUMENTS_MAPPER: TuyaZigbeeTyDataResponseCommandArgumentsMapper =
   Object.freeze({
     inOut: ([payload]: TuyaZigbeeTyDataResponseCommandArguments): Uint8Array => {
       return Encoder.encode(payload, encodeTuyaZigbeeTyDataResponsePayload);
