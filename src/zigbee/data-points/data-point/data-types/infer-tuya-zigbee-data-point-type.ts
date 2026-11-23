@@ -13,7 +13,7 @@ export function inferTuyaZigbeeDataPointType(value: unknown): TuyaZigbeeDataPoin
     case 'boolean':
       return TUYA_ZIGBEE_DATA_POINT_TYPE_BOOLEAN; // boolean
     case 'number': {
-      if (!Number.isInteger(value) || value < 0 || value >= 0xffff_ffff) {
+      if (!Number.isInteger(value) || value < 0 || value > 0xffff_ffff) {
         throw new RangeError('Only uint32 number is supported.');
       } else {
         return TUYA_ZIGBEE_DATA_POINT_TYPE_UINT32; // value (uint32, be)
