@@ -10,3 +10,28 @@ test('rejects an invalid bitmap length.', (): void => {
     decodeTuyaZigbeeDataPointDataTypeBitmap(decoder);
   }).toThrow('Invalid length.');
 });
+
+test('decodes a 1-byte bitmap.', (): void => {
+  // length 0x0001 (1 byte), followed by the bitmap value
+  const decoder: Decoder = new Decoder(new Uint8Array([0x00, 0x01, 0xa5]));
+
+  expect(decodeTuyaZigbeeDataPointDataTypeBitmap(decoder)).toEqual({ length: 1, value: 0xa5 });
+  expect(decoder.done).toBe(true);
+});
+
+test('decodes a 2-byte big-endian bitmap.', (): void => {
+  const decoder: Decoder = new Decoder(new Uint8Array([0x00, 0x02, 0x12, 0x34]));
+
+  expect(decodeTuyaZigbeeDataPointDataTypeBitmap(decoder)).toEqual({ length: 2, value: 0x1234 });
+  expect(decoder.done).toBe(true);
+});
+
+test('decodes a 4-byte big-endian bitmap.', (): void => {
+  const decoder: Decoder = new Decoder(new Uint8Array([0x00, 0x04, 0x12, 0x34, 0x56, 0x78]));
+
+  expect(decodeTuyaZigbeeDataPointDataTypeBitmap(decoder)).toEqual({
+    length: 4,
+    value: 0x1234_5678,
+  });
+  expect(decoder.done).toBe(true);
+});
