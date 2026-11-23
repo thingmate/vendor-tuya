@@ -5,6 +5,9 @@ import {
   type TuyaZigbeeDataPointPropertyOptions,
 } from '../../tuya-zigbee-data-point-property.ts';
 
+/**
+ * Read, write and observe view of a 32-bit unsigned integer data point.
+ */
 export class TuyaZigbeeNumberDataPointProperty extends TuyaZigbeeDataPointProperty<number> {
   constructor(
     stream: TuyaZigbeeCommandStream,

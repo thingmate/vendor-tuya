@@ -4,6 +4,10 @@ import type { TuyaZigbeeCommandStream } from '../../../../commands/command/tuya-
 import { TuyaZigbeeDataPointObserver } from '../observe-data-point/tuya-zigbee-data-point-observer.ts';
 import { TuyaZigbeeReadDataPointActionRaw } from './tuya-zigbee-read-data-point-action-raw.ts';
 
+/**
+ * Queries a device over a command stream for its current data points and
+ * resolves with the reported value of a single data point.
+ */
 export class TuyaZigbeeReadDataPointAction<
   GValue,
 > extends TuyaZigbeeReadDataPointActionRaw<GValue> {

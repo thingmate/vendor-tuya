@@ -7,14 +7,32 @@ import type { TuyaZigbeeTyDataResponseCommandArguments } from '../../../commands
 import type { TuyaZigbeeTyDataResponsePayload } from '../../../commands/built-in/0x01-ty-data-response/payload/tuya-zigbee-ty-data-response-payload.ts';
 import type { TuyaZigbeeDataPoint } from '../../data-point/tuya-zigbee-data-point.ts';
 
+/**
+ * Options of the raw write action, with injected command abilities.
+ */
 export interface TuyaZigbeeWriteDataPointsActionRawOptions {
+  /** Ability sending the `TY_DATA_REQUEST` command. */
   readonly tyDataRequest: HavingSendAbility<TuyaZigbeeTyDataRequestCommandArguments>;
+  /** Ability observing the `TY_DATA_RESPONSE` command. */
   readonly tyDataResponse: HavingObserveAbility<TuyaZigbeeTyDataResponseCommandArguments>;
+  /**
+   * When `true`, a response only matches if it contains every requested data point id.
+   * Defaults to `false`: any response with the matching sequence number is accepted.
+   */
   readonly checkDataPointIds?: boolean;
 }
 
+/**
+ * Arguments of a data points write action: a single `TY_DATA_REQUEST` payload.
+ */
 export type TuyaZigbeeWriteDataPointsActionRawArguments = TuyaZigbeeTyDataRequestCommandArguments;
 
+/**
+ * Writes data points to a device and awaits its `TY_DATA_RESPONSE` acknowledgement.
+ *
+ * The response is correlated to the request by its sequence number, and optionally
+ * by the presence of every requested data point id (see `checkDataPointIds`).
+ */
 export class TuyaZigbeeWriteDataPointsActionRaw extends AsyncFunction<
   TuyaZigbeeWriteDataPointsActionRawArguments,
   TuyaZigbeeTyDataResponsePayload

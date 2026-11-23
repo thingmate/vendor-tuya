@@ -17,6 +17,9 @@ import type { TuyaZigbeeDataPointType } from '../tuya-zigbee-data-point-type.ts'
 /**
  * @inheritDoc https://github.com/arendst/Tasmota/blob/2f7793ddcfa984ab242478388892edb71f37007a/tasmota/tasmota_xdrv_driver/xdrv_23_zigbee_6_0_commands.ino#L536
  */
+/**
+ * Dispatches the encoding of a data point value based on its wire data type.
+ */
 export function encodeTuyaZigbeeDataPointDataTypeUnknown(
   encoder: Encoder,
   dataType: TuyaZigbeeDataPointType,

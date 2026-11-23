@@ -5,6 +5,9 @@ import {
   type TuyaZigbeeDataPointPropertyOptions,
 } from '../../tuya-zigbee-data-point-property.ts';
 
+/**
+ * Read, write and observe view of a boolean data point.
+ */
 export class TuyaZigbeeBooleanDataPointProperty extends TuyaZigbeeDataPointProperty<boolean> {
   constructor(
     stream: TuyaZigbeeCommandStream,

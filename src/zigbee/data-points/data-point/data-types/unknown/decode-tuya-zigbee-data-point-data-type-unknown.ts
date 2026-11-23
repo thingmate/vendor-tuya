@@ -13,6 +13,9 @@ import { decodeTuyaZigbeeDataPointDataTypeBitmap } from '../0x05-bitmap/decode-t
 import { TUYA_ZIGBEE_DATA_POINT_TYPE_BITMAP } from '../0x05-bitmap/tuya-zigbee-data-point-type-bitmap.constant.ts';
 import type { TuyaZigbeeDataPointType } from '../tuya-zigbee-data-point-type.ts';
 
+/**
+ * Dispatches the decoding of a data point value based on its wire data type.
+ */
 export function decodeTuyaZigbeeDataPointDataTypeUnknown(
   decoder: Decoder,
   dataType: TuyaZigbeeDataPointType,

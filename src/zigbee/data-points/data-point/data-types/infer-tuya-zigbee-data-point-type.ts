@@ -4,6 +4,13 @@ import { TUYA_ZIGBEE_DATA_POINT_TYPE_UINT32 } from './0x02-uint32/tuya-zigbee-da
 import { TUYA_ZIGBEE_DATA_POINT_TYPE_STRING } from './0x03-string/tuya-zigbee-data-point-type-string.constant.ts';
 import { type TuyaZigbeeDataPointType } from './tuya-zigbee-data-point-type.ts';
 
+/**
+ * Infers the wire data type of a data point from a JavaScript value:
+ * `Uint8Array` to raw, `boolean` to boolean, non-negative integer to uint32,
+ * `string` to string.
+ * @throws RangeError when a number is not a uint32.
+ * @throws Error for any other value type.
+ */
 export function inferTuyaZigbeeDataPointType(value: unknown): TuyaZigbeeDataPointType {
   if (value instanceof Uint8Array) {
     return TUYA_ZIGBEE_DATA_POINT_TYPE_RAW; // raw

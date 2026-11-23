@@ -2,6 +2,9 @@ import { type Encoder } from '@xstd/codec';
 import { encodeTuyaZigbeeDataPoint } from '../data-point/codec/encode-tuya-zigbee-data-point.ts';
 import { type TuyaZigbeeDataPoint } from '../data-point/tuya-zigbee-data-point.ts';
 
+/**
+ * Encodes consecutive data points back to back.
+ */
 export function encodeTuyaZigbeeDataPoints(
   encoder: Encoder,
   dataPoints: readonly TuyaZigbeeDataPoint[],

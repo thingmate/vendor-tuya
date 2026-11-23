@@ -2,6 +2,9 @@ import { type Encoder } from '@xstd/codec';
 import { encodeTuyaZigbeeDataPoints } from '../../../../../data-points/codec/encode-tuya-zigbee-data-points.js';
 import { type TuyaZigbeeTyDataResponsePayload } from '../tuya-zigbee-ty-data-response-payload.js';
 
+/**
+ * Encodes a `TY_DATA_RESPONSE` payload: `seq (2 bytes) | data points`.
+ */
 export function encodeTuyaZigbeeTyDataResponsePayload(
   encoder: Encoder,
   { seq, dataPoints }: TuyaZigbeeTyDataResponsePayload,

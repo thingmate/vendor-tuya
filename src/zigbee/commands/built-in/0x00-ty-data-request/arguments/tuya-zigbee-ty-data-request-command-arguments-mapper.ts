@@ -4,9 +4,15 @@ import { decodeTuyaZigbeeTyDataRequestPayload } from '../payload/codec/decode-tu
 import { encodeTuyaZigbeeTyDataRequestPayload } from '../payload/codec/encode-tuya-zigbee-ty-data-request-payload.ts';
 import type { TuyaZigbeeTyDataRequestCommandArguments } from './tuya-zigbee-ty-data-request-command-arguments.ts';
 
+/**
+ * Payload mapper type of the `TY_DATA_REQUEST` command.
+ */
 export type TuyaZigbeeTyDataRequestCommandArgumentsMapper =
   ZCLPayloadMapper<TuyaZigbeeTyDataRequestCommandArguments>;
 
+/**
+ * Payload mapper between `TY_DATA_REQUEST` command arguments and their wire format.
+ */
 export const TUYA_ZIGBEE_TY_DATA_REQUEST_COMMAND_ARGUMENTS_MAPPER: TuyaZigbeeTyDataRequestCommandArgumentsMapper =
   Object.freeze({
     inOut: ([payload]: TuyaZigbeeTyDataRequestCommandArguments): Uint8Array => {

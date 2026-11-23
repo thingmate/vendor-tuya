@@ -5,6 +5,9 @@ import {
   type TuyaZigbeeDataPointPropertyOptions,
 } from '../../tuya-zigbee-data-point-property.ts';
 
+/**
+ * Read, write and observe view of a string data point.
+ */
 export class TuyaZigbeeStringDataPointProperty extends TuyaZigbeeDataPointProperty<string> {
   constructor(
     stream: TuyaZigbeeCommandStream,

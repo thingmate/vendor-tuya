@@ -2,6 +2,9 @@ import { type Encoder } from '@xstd/codec';
 import { encodeTuyaZigbeeDataPointDataLength } from '../length/encode-tuya-zigbee-data-point-data-length.ts';
 import { type TuyaZigbeeDataPointTypeBitmap } from './tuya-zigbee-data-point-type-bitmap.ts';
 
+/**
+ * Encodes a bitmap data point value (big-endian) on the byte size given by `length`.
+ */
 export function encodeTuyaZigbeeDataPointDataTypeBitmap(
   encoder: Encoder,
   { length, value }: TuyaZigbeeDataPointTypeBitmap,

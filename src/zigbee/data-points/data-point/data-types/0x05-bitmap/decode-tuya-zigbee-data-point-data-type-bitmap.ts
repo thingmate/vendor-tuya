@@ -5,6 +5,10 @@ import {
   type TuyaZigbeeDataPointTypeBitmapLength,
 } from './tuya-zigbee-data-point-type-bitmap.ts';
 
+/**
+ * Decodes a bitmap data point value (big-endian), rejecting any length other
+ * than 1, 2 or 4.
+ */
 export function decodeTuyaZigbeeDataPointDataTypeBitmap(
   decoder: Decoder,
 ): TuyaZigbeeDataPointTypeBitmap {

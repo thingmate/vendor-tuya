@@ -7,11 +7,17 @@ import {
   type TuyaZigbeeWriteDataPointsActionRawOptions,
 } from './tuya-zigbee-write-data-points-action-raw.ts';
 
+/**
+ * Options of {@link TuyaZigbeeWriteDataPointsAction}, minus the injected command abilities.
+ */
 export interface TuyaZigbeeWriteDataPointsActionOptions extends Omit<
   TuyaZigbeeWriteDataPointsActionRawOptions,
   'tyDataRequest' | 'tyDataResponse'
 > {}
 
+/**
+ * Writes data points to a device over a command stream and awaits its acknowledgement.
+ */
 export class TuyaZigbeeWriteDataPointsAction extends TuyaZigbeeWriteDataPointsActionRaw {
   constructor(stream: TuyaZigbeeCommandStream, options?: TuyaZigbeeWriteDataPointsActionOptions) {
     super({
