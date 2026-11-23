@@ -7,7 +7,7 @@ import type { TuyaZigbeeTyDataResponseCommandArguments } from '../../../commands
 import type { TuyaZigbeeTyDataResponsePayload } from '../../../commands/built-in/0x01-ty-data-response/payload/tuya-zigbee-ty-data-response-payload.ts';
 import type { TuyaZigbeeDataPoint } from '../../data-point/tuya-zigbee-data-point.ts';
 
-export interface ZCLWriteAttributeActionRawOptions {
+export interface TuyaZigbeeWriteDataPointsActionRawOptions {
   readonly tyDataRequest: HavingSendAbility<TuyaZigbeeTyDataRequestCommandArguments>;
   readonly tyDataResponse: HavingObserveAbility<TuyaZigbeeTyDataResponseCommandArguments>;
   readonly checkDataPointIds?: boolean;
@@ -23,7 +23,7 @@ export class TuyaZigbeeWriteDataPointsActionRaw extends AsyncFunction<
     tyDataRequest,
     tyDataResponse,
     checkDataPointIds = false,
-  }: ZCLWriteAttributeActionRawOptions) {
+  }: TuyaZigbeeWriteDataPointsActionRawOptions) {
     super(
       AsyncFunction.fromSendAndReceive<
         TuyaZigbeeWriteDataPointsActionRawArguments,

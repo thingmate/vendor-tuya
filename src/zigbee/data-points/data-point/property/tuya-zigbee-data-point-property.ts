@@ -5,11 +5,11 @@ import { TuyaZigbeeDataPointObserver } from '../actions/observe-data-point/tuya-
 import { TuyaZigbeeReadDataPointAction } from '../actions/read-data-point/tuya-zigbee-read-data-point-action.ts';
 import {
   TuyaZigbeeWriteDataPointAction,
-  type ZCLWriteAttributeActionOptions,
+  type TuyaZigbeeWriteDataPointActionOptions,
 } from '../actions/write-data-point/tuya-zigbee-write-data-point-action.ts';
 import type { TuyaZigbeeDataPointType } from '../data-types/tuya-zigbee-data-point-type.ts';
 
-export interface TuyaZigbeeDataPointPropertyOptions extends ZCLWriteAttributeActionOptions {}
+export interface TuyaZigbeeDataPointPropertyOptions extends TuyaZigbeeWriteDataPointActionOptions {}
 
 export class TuyaZigbeeDataPointProperty<GValue> extends PropertyAbilities<GValue> {
   constructor(

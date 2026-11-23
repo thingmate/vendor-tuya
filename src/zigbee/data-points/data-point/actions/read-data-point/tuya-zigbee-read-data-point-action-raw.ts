@@ -1,14 +1,14 @@
 import type { HavingObserveAbility, HavingSendAbility } from '@thingmate/abilities';
+import type { VoidArguments } from '@thingmate/zigbee';
 import { AsyncFunction } from '@xstd/async-function';
-import type { VoidArguments } from '../../../../../../../../zigbee/v5/src/misc/types/void-arguments.ts';
 
-export interface ZCLReadAttributeActionRawOptions<GValue> {
+export interface TuyaZigbeeReadDataPointActionRawOptions<GValue> {
   readonly observer: HavingObserveAbility<GValue>;
   readonly tyDataQuery: HavingSendAbility<VoidArguments>;
 }
 
 export class TuyaZigbeeReadDataPointActionRaw<GValue> extends AsyncFunction<VoidArguments, GValue> {
-  constructor({ observer, tyDataQuery }: ZCLReadAttributeActionRawOptions<GValue>) {
+  constructor({ observer, tyDataQuery }: TuyaZigbeeReadDataPointActionRawOptions<GValue>) {
     super(
       AsyncFunction.fromSendAndReceive<VoidArguments, GValue>({
         send: tyDataQuery.send,

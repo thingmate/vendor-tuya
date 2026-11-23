@@ -7,7 +7,7 @@ import { TuyaZigbeeSequenceGenerator } from '../../../../sequence/generator/tuya
 import { TuyaZigbeeWriteDataPointsAction } from '../../../actions/write-data-points/tuya-zigbee-write-data-points-action.ts';
 import type { TuyaZigbeeDataPointType } from '../../data-types/tuya-zigbee-data-point-type.ts';
 
-export interface ZCLWriteAttributeActionOptions {
+export interface TuyaZigbeeWriteDataPointActionOptions {
   readonly seq?: HavingTuyaZigbeeSequenceGeneratorAbilities | undefined;
 }
 
@@ -21,7 +21,7 @@ export class TuyaZigbeeWriteDataPointAction<GValue> extends AsyncFunction<
     stream: TuyaZigbeeCommandStream,
     dataPointId: number,
     dataPointType: TuyaZigbeeDataPointType,
-    { seq = TuyaZigbeeSequenceGenerator.shared }: ZCLWriteAttributeActionOptions = {},
+    { seq = TuyaZigbeeSequenceGenerator.shared }: TuyaZigbeeWriteDataPointActionOptions = {},
   ) {
     super(
       cachedInstance(TuyaZigbeeWriteDataPointsAction, stream)
