@@ -11,13 +11,16 @@ export function decodeTuyaZigbeeDataPointDataTypeBitmap(
   const length: TuyaZigbeeDataPointTypeBitmapLength = decodeTuyaZigbeeDataPointDataLength(
     decoder,
   ) as TuyaZigbeeDataPointTypeBitmapLength;
+
   let value: number;
   if (length === 1) {
     value = decoder.uint8();
   } else if (length === 2) {
     value = decoder.uint16BE();
-  } else {
+  } else if (length === 4) {
     value = decoder.uint32BE();
+  } else {
+    throw new Error('Invalid length.');
   }
 
   return {
