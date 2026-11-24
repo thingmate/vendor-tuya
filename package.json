@@ -1,6 +1,6 @@
 {
   "name": "@thingmate/vendor-tuya",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "module",
   "description": "Typed Tuya private cluster (0xEF00) adapters: stream-based data points over your Zigbee adapter",
   "keywords": [
