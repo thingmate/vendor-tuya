@@ -150,7 +150,7 @@ const write = new TuyaZigbeeWriteDataPointsAction(stream, { checkDataPointIds: t
 
 const response = await write.call(new AbortController().signal, [
   {
-    seq: 1, // stamped for you by TuyaZigbeeSequenceGenerator.shared by default
+    seq: 1, // chosen by you at this layer — only the property write path stamps it (TuyaZigbeeSequenceGenerator.shared)
     dataPoints: [
       { id: 1, type: 0x01, value: true },
       { id: 2, type: 0x02, value: 42 },
