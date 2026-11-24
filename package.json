@@ -2,8 +2,18 @@
   "name": "@thingmate/vendor-tuya",
   "version": "0.0.1",
   "type": "module",
-  "description": "Tuya adapters",
-  "keywords": [],
+  "description": "Typed Tuya private cluster (0xEF00) adapters: stream-based data points over your Zigbee adapter",
+  "keywords": [
+    "tuya",
+    "zigbee",
+    "ef00",
+    "data-points",
+    "iot",
+    "smart-home",
+    "stream",
+    "adapter",
+    "typescript"
+  ],
   "author": "Valentin Richard",
   "license": "MIT",
   "repository": {
